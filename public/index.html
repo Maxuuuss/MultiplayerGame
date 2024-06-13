@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer Game</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        #gameCanvas {
+            border: 1px solid black;
+        }
+        #menuScreen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: white;
+            z-index: 10;
+        }
+        #nameInput {
+            font-size: 20px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        #startButton {
+            font-size: 20px;
+            padding: 10px 20px;
+        }
+        #playerList {
+            margin-left: 20px;
+            font-size: 18px;
+        }
+        #playerList ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #playerList li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="menuScreen">
+        <input type="text" id="nameInput" placeholder="Enter your name (max 15 characters)" maxlength="15">
+        <button id="startButton">Start Game</button>
+    </div>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div id="playerList">
+        <h2>Players</h2>
+        <ul id="playerNames"></ul>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
